@@ -1,0 +1,33 @@
+
+CDK and the Serverless Framework are both JavaScript frameworks that you may install as a
+Command Line Interface (CLI) script via npm or yarn. Both support AWS, but their use and advantages 
+varies.
+
+The Serverless configuration file (named "serverless.yml") uses a similar format for most
+providers. The "serverless.yml" file will enable you to specify your configuration using YAML syntax.
+
+
+CDK allows you to deploy resources in AWS using TypeScript, JavaScript, Python, Java,
+and .NET. Your source code defines both the resources and the files those resources need
+(e.g., AWS Lambda function source code). CDK will synthesize the source code to create
+the appropriate AWS CloudFormation template.
+
+
+Serverless made it super simple to create a Lambda function and the supporting resources. 
+But, it does creates a extra new S3 bucket to hold the Serverless configuration.
+
+CDK required a little extra effort because it did not come with a sample Lambda function.
+But, it limited the number of resources and gave me more control.
+
+Serverless does not support certain resources (e.g., DynamoDB tables and S3 buckets)
+out of the box. We therefore need to resort to using CloudFormation to create them
+
+CDK simplified the DynamoDB and IAM policy creation with a few code lines and without
+knowing the CloudFormation template code and IAM policy statements. 
+
+Both CDK and Serverless support plugins
+Serverless plugins may or may not be stable
+CDK's advantage over Serverless is that AWS is building and maintaining constructs, which gives AWS more stability over the entire ecosystem. 
+In contrast, Serverless has no direct control over the plugins.
+
+
